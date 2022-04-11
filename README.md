@@ -1,13 +1,23 @@
 # Desafio de Programação Orientada a Objetos do IFSC
+
 ## Definir o Problema
-Neste desafio vou solucionar um problema pessoal ao organizar meus livros, salvando juntos seus arquivos extras, última página lida, entre outros.
+Nesse desafio a ideia é tentar resolver um problema que tenho, onde tenho diversos livros, os quais as vezes não lemrbo algum detalhe em específico, como por exemplo, a edição, além de colocar um ideia de possível local que ele esteja, links para os recursos digitais que ele possui, entre outros.
+
 ## Definir os Requesitos Funcionais
-A
+Formulário
+
+
 ## Definir os Requesitos Não Funcionais
-A
+Sistema de Login
+Talvez webassembly
+Banco de dados (talvez firabase)
+Qt
+
 ## Casos de Uso
-A
+Cadastrar livros, revistas, componentes, com suas devidas propriedades e referências.
+
 ### Diagrama de Classes
 A
+
 ### Diagrama de Sequência
 A
