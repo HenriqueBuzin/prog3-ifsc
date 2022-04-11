@@ -17,7 +17,7 @@ Qt
 Cadastrar livros, revistas, componentes, com suas devidas propriedades e referências.
 
 ### Diagrama de Classes
-[Google] (https://drive.google.com/drive/folders/1M9iOW31pGDJws7hF-2D70_Qi39PV5hy-?usp=sharing)
+<https://drive.google.com/drive/folders/1M9iOW31pGDJws7hF-2D70_Qi39PV5hy-?usp=sharing>
 
 ### Diagrama de Sequência
-[Google] (https://drive.google.com/drive/folders/1m3S84pTVdysjQW2wkAKmm3nvREJWo-UR?usp=sharing)
+<https://drive.google.com/drive/folders/1m3S84pTVdysjQW2wkAKmm3nvREJWo-UR?usp=sharing>
