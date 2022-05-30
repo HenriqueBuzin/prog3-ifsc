@@ -3,9 +3,10 @@
 
 class File {
     private:
-        std::string _url = "";
+        std::string _url;
     public:
-        void setUrl(std::string url) {
+        File():_url("") {}
+        File(std::string url) {
             _url = url;
         }
         std::string getUrl() {
@@ -21,6 +22,8 @@ class Item {
     protected:
         int _quantity;
 
+    public:
+
         enum ItemType {
             BOOK,
             COMPONENT
@@ -28,7 +31,6 @@ class Item {
 
         ItemType _type;
 
-    public:
         Item(ItemType t): _type(t) { }
 
         Item(ItemType t, int quantity): _type(t), _quantity(quantity) { }
@@ -104,36 +106,33 @@ class Component: public Item {
         }
 };
 
+class System {
+    private:
+        std::vector<Item*> _items;
+
+    public:
+        void addBook(int isbn, std::string link) {
+
+            Book* book = new Book();
+            book->setIsbn(isbn);
+            book->setFile(File(link));
+            _items.push_back(book);
+
+        }
+        void addComponent(int voltage, std::string link) {
+
+            Component* component = new Component();
+            component->setVoltage(voltage);
+            component->setFile(File(link));
+
+            _items.push_back(component);
+
+        }
+
+};
+
 int main() {
     std::cout << "Inicio" << std::endl;
-
-    std::cout << "Livro" << std::endl;
-
-    Book* book = new Book();
-    book->setIsbn(1234);
-    book->getType();
-
-    File* file0 = new File();
-    file0->setUrl("google.com");
-    book->setFile(*file0);
-
-    std:: cout << book->getType() << std::endl;
-
-    std::cout << "-Livro-" << std::endl;
-
-    std::cout << "Componente" << std::endl;
-
-    Component* component = new Component();
-    component->setVoltage(400);
-    component->getType();
-
-    File* file1 = new File();
-    file1->setUrl("google.com");
-    book->setFile(*file1);
-
-    std:: cout << component->getType() << std::endl;
-
-    std::cout << "Componente" << std::endl;
 
     std::cout << "Fim!" << std::endl;
 
