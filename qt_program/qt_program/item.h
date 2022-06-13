@@ -3,10 +3,14 @@
 
 #include <QWidget>
 
-class Item
+class Item: public QWidget
 {
 public:
-    Item();
+    explicit Item(QWidget *parent = nullptr);
+    ~Item();
+
+signals:
+
 };
 
 #endif // ITEM_H

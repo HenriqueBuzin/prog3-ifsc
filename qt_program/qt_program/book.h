@@ -7,6 +7,7 @@ class Book : public QWidget
 {
 public:
     explicit Book(QWidget *parent = nullptr);
+    ~Book();
 
 signals:
 

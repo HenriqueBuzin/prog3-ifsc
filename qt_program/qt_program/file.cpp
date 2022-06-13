@@ -1,6 +1,11 @@
 #include "file.h"
 
-File::File()
+File::File(QWidget *parent)
+    : QWidget{parent}
 {
 
+}
+
+File::~File()
+{
 }

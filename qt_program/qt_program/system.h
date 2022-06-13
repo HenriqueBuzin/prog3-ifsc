@@ -3,10 +3,14 @@
 
 #include <QWidget>
 
-class System
+class System: public QWidget
 {
 public:
-    System();
+    explicit System(QWidget *parent = nullptr);
+    ~System();
+
+signals:
+
 };
 
 #endif // SYSTEM_H

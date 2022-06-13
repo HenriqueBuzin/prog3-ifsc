@@ -3,10 +3,14 @@
 
 #include <QWidget>
 
-class File
+class File: public QWidget
 {
 public:
-    File();
+    explicit File(QWidget *parent = nullptr);
+    ~File();
+
+signals:
+
 };
 
 #endif // FILE_H

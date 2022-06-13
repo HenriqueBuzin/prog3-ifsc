@@ -5,3 +5,7 @@ Book::Book(QWidget *parent)
 {
 
 }
+
+Book::~Book()
+{
+}

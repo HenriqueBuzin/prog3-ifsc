@@ -11,4 +11,3 @@ Warehouse::Warehouse(QWidget *parent)
 Warehouse::~Warehouse()
 {
 }
-

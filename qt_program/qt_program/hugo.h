@@ -9,6 +9,7 @@ class Hugo : public QWidget
     Q_OBJECT
 public:
     explicit Hugo(QWidget *parent = nullptr);
+    ~Hugo();
 
 signals:
 

@@ -11,3 +11,7 @@ Hugo::Hugo(QWidget *parent)
     this->setLayout(_layout);
 
 }
+
+Hugo::~Hugo()
+{
+}

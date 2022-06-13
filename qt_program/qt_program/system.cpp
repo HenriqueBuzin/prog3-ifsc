@@ -1,6 +1,11 @@
 #include "system.h"
 
-System::System()
+System::System(QWidget *parent)
+    : QWidget{parent}
 {
 
+}
+
+System::~System()
+{
 }

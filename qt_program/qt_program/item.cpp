@@ -1,6 +1,11 @@
 #include "item.h"
 
-Item::Item()
+Item::Item(QWidget *parent)
+    : QWidget{parent}
 {
 
+}
+
+Item::~Item()
+{
 }

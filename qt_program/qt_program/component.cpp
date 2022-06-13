@@ -1,6 +1,11 @@
 #include "component.h"
 
-Component::Component()
+Component::Component(QWidget *parent)
+    : QWidget{parent}
 {
 
+}
+
+Component::~Component()
+{
 }

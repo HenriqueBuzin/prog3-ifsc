@@ -3,10 +3,14 @@
 
 #include <QWidget>
 
-class Component
+class Component: public QWidget
 {
 public:
-    Component();
+    explicit Component(QWidget *parent = nullptr);
+    ~Component();
+
+signals:
+
 };
 
 #endif // COMPONENT_H
