@@ -15,11 +15,21 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-        warehouse.cpp
-        warehouse.h
-        hugo.cpp
-        hugo.h
+    book.cpp
+    book.h
+    component.cpp
+    component.h
+    file.cpp
+    file.h
+    hugo.cpp
+    hugo.h
+    item.cpp
+    item.h
+    main.cpp
+    system.cpp
+    system.h
+    warehouse.cpp
+    warehouse.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
