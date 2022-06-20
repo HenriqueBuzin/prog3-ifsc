@@ -2,6 +2,7 @@
 #define FILE_H
 
 #include <QWidget>
+#include <QtWidgets>
 
 class File: public QWidget
 {

@@ -2,6 +2,7 @@
 #define COMPONENT_H
 
 #include <QWidget>
+#include <QtWidgets>
 
 class Component: public QWidget
 {

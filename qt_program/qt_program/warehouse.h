@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
-#include "hugo.h"
+#include "System.h"
 
 class Warehouse : public QMainWindow
 {
@@ -14,7 +14,7 @@ public:
     ~Warehouse();
 
 private:
-    Hugo * _centralWidget;
+    System * _centralWidget;
 
 };
 #endif // WAREHOUSE_H

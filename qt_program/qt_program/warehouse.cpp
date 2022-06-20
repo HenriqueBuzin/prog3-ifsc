@@ -3,7 +3,7 @@
 Warehouse::Warehouse(QWidget *parent)
     : QMainWindow(parent)
 {
-    _centralWidget = new Hugo;
+    _centralWidget = new System;
     this->setCentralWidget(_centralWidget);
 
 }

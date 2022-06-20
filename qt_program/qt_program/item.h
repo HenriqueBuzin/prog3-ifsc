@@ -2,6 +2,7 @@
 #define ITEM_H
 
 #include <QWidget>
+#include <QtWidgets>
 
 class Item: public QWidget
 {

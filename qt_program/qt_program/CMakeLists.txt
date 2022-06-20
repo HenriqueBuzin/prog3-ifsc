@@ -21,8 +21,6 @@ set(PROJECT_SOURCES
     component.h
     file.cpp
     file.h
-    hugo.cpp
-    hugo.h
     item.cpp
     item.h
     main.cpp
