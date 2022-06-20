@@ -8,7 +8,6 @@ class File: public QWidget
 {
 public:
     explicit File(QWidget *parent = nullptr);
-    ~File();
 
 signals:
 

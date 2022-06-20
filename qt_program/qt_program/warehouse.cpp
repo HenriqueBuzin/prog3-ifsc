@@ -5,9 +5,4 @@ Warehouse::Warehouse(QWidget *parent)
 {
     _centralWidget = new System;
     this->setCentralWidget(_centralWidget);
-
-}
-
-Warehouse::~Warehouse()
-{
 }

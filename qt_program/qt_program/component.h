@@ -6,11 +6,16 @@
 
 class Component: public QWidget
 {
+    Q_OBJECT
+
 public:
     explicit Component(QWidget *parent = nullptr);
-    ~Component();
 
-signals:
+private:
+    QHBoxLayout * _layout;
+    QLabel * _label;
+    QPushButton * _button;
+    QLineEdit * _input;
 
 };
 

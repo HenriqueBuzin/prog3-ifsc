@@ -4,14 +4,19 @@
 #include <QWidget>
 #include <QtWidgets>
 
+#include "Book.h"
+#include "Component.h"
+
 class System: public QWidget
 {
+    Q_OBJECT
+
 public:
     explicit System(QWidget *parent = nullptr);
-    ~System();
 
-signals:
-
+public slots:
+    void openBook();
+    void openComponent();
 
 private:
     QHBoxLayout * _topLayout;

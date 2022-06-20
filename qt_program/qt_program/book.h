@@ -6,21 +6,14 @@
 
 class Book : public QWidget
 {
+    Q_OBJECT
 
 public:
     explicit Book(QWidget *parent = nullptr);
-    ~Book();
+    explicit CreateBook(QWidget *parent = nullptr);
 
-signals:
-    void transmit_to_object(bool value);
-
-private slots:
-    void receive_from_object(bool value);
 
 private:
-    std::string _name;
-    int isbn;
-
     QHBoxLayout * _layout;
     QLabel * _label;
     QPushButton * _button;

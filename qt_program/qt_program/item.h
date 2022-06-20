@@ -8,7 +8,6 @@ class Item: public QWidget
 {
 public:
     explicit Item(QWidget *parent = nullptr);
-    ~Item();
 
 signals:
 

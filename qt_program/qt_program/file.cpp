@@ -5,7 +5,3 @@ File::File(QWidget *parent)
 {
 
 }
-
-File::~File()
-{
-}

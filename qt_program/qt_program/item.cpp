@@ -5,7 +5,3 @@ Item::Item(QWidget *parent)
 {
 
 }
-
-Item::~Item()
-{
-}

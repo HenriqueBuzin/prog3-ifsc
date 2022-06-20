@@ -11,7 +11,6 @@ class Warehouse : public QMainWindow
 
 public:
     Warehouse(QWidget *parent = nullptr);
-    ~Warehouse();
 
 private:
     System * _centralWidget;
