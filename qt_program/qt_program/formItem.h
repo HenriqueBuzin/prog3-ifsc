@@ -13,6 +13,7 @@ public:
 private:
     QHBoxLayout * _topLayout;
     QVBoxLayout * _rightLayout;
+    QVBoxLayout * _leftLayout;
     QLabel * _label;
     QPushButton * _button;
     QLineEdit * _input;
