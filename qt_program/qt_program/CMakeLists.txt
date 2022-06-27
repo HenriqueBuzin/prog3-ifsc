@@ -21,6 +21,10 @@ set(PROJECT_SOURCES
     component.h
     file.cpp
     file.h
+    formItem.cpp
+    formItem.h
+    deleteItem.h
+    deleteItem.cpp
     item.cpp
     item.h
     main.cpp

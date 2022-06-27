@@ -11,7 +11,7 @@ Component::Component(QWidget *parent)
     _input = new QLineEdit("");
     _layout->addWidget(_input);
 
-    _label = new QLabel("ISBN");
+    _label = new QLabel("Voltage");
     _layout->addWidget(_label);
 
     _input = new QLineEdit("");

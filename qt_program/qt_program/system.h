@@ -4,8 +4,8 @@
 #include <QWidget>
 #include <QtWidgets>
 
-#include "Book.h"
-#include "Component.h"
+#include "formItem.h"
+#include "deleteItem.h"
 
 class System: public QWidget
 {
@@ -15,8 +15,8 @@ public:
     explicit System(QWidget *parent = nullptr);
 
 public slots:
-    void openBook();
-    void openComponent();
+    void updateItem();
+    void deleteItem();
 
 private:
     QHBoxLayout * _topLayout;

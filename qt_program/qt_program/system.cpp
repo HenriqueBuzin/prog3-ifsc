@@ -1,14 +1,14 @@
 #include "system.h"
 
-void System::openBook()
+void System::updateItem()
 {
-    Book* ptr = new Book();
+    FormItem* ptr = new FormItem();
     ptr->show();
 }
 
-void System::openComponent()
+void System::deleteItem()
 {
-    Component* ptr = new Component();
+    DeleteItem* ptr = new DeleteItem();
     ptr->show();
 }
 
@@ -21,13 +21,12 @@ System::System(QWidget *parent)
     _table = new QTableWidget(12, 3, this);
     _topLayout->addWidget(_table);
 
-    _button = new QPushButton("Gerenciar Livros");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(openBook()));
-
+    _button = new QPushButton("Atualizar Items");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(updateItem()));
     _rightLayout->addWidget(_button);
 
-    _button = new QPushButton("Gerenciar Componentes");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(openComponent()));
+    _button = new QPushButton("Excluir");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(deleteItem()));
     _rightLayout->addWidget(_button);
 
     _rightLayout->addStretch();
