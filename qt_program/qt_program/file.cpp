@@ -1,7 +1,10 @@
 #include "file.h"
 
-File::File(QWidget *parent)
-    : QWidget{parent}
+File::File(QString url)
 {
+    QString _url = url;
+}
 
+QString File::getFile(){
+    return _url;
 }

@@ -1,16 +1,15 @@
 #ifndef FILE_H
 #define FILE_H
 
-#include <QWidget>
-#include <QtWidgets>
+#include <QString>
 
-class File: public QWidget
+class File
 {
 public:
-    explicit File(QWidget *parent = nullptr);
-
-signals:
-
+    File(QString url);
+    QString getFile();
+private:
+    QString _url;
 };
 
 #endif // FILE_H
