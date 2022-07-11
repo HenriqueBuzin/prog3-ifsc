@@ -1,5 +1,10 @@
 #include "system.h"
 
+void System::teste()
+{
+    Book* ptr = new Book();
+}
+
 void System::updateItem()
 {
     FormItem* ptr = new FormItem();
@@ -27,6 +32,10 @@ System::System(QWidget *parent)
 
     _button = new QPushButton("Excluir");
     QObject::connect(_button, SIGNAL(clicked()), this, SLOT(deleteItem()));
+    _rightLayout->addWidget(_button);
+
+    _button = new QPushButton("Teste");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(teste()));
     _rightLayout->addWidget(_button);
 
     _rightLayout->addStretch();

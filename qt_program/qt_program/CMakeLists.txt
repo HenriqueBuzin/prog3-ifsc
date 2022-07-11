@@ -32,6 +32,8 @@ set(PROJECT_SOURCES
     system.h
     warehouse.cpp
     warehouse.h
+    csv.h
+    csv.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
