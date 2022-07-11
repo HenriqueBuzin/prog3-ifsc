@@ -1,46 +1,15 @@
 #include "book.h"
 
-Book::Book(QWidget *parent)
-    : QWidget{parent}
+Book::Book()
 {
 
-    QString _file = "books.csv";
+    QString _file = "D:/Github/prog3-ifsc/qt_program/qt_program/books.csv";
     Csv obj(_file);
     QStringList _books = obj.Read();
 
-    for(const auto& i:_books)
-        qDebug() << "a";
+    foreach(QString item, _books)
+        qDebug() << "List items = " << item;
 
-
-
-
-    /*
-    _layout = new QHBoxLayout;
-
-    _label = new QLabel("Nome");
-    _layout->addWidget(_label);
-
-    _input = new QLineEdit("");
-    _layout->addWidget(_input);
-
-    _label = new QLabel("ISBN");
-    _layout->addWidget(_label);
-
-    _input = new QLineEdit("");
-    _layout->addWidget(_input);
-
-    _button = new QPushButton("Cancelar");
-    _layout->addWidget(_button);
-
-    _button = new QPushButton("Cadastrar");
-    _layout->addWidget(_button);
-
-    QString _file = "books.csv";
-
-    _button = new QPushButton("Salvar Livros");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT());
-    _layout->addWidget(_button);
-
-    this->setLayout(_layout);
-    */
 }
+
+Book::Book(QString name, int quantity): _name(name), _quantity(quantity) {}

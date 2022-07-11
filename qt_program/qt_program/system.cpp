@@ -23,7 +23,7 @@ System::System(QWidget *parent)
     _topLayout = new QHBoxLayout;
     _rightLayout = new QVBoxLayout;
 
-    _table = new QTableWidget(12, 3, this);
+    _table = new QTableWidget(2, 1, this);
     _topLayout->addWidget(_table);
 
     _button = new QPushButton("Atualizar Items");
