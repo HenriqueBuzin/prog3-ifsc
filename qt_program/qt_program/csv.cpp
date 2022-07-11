@@ -18,13 +18,17 @@ QList<QList<QString>> Csv::Read(){
 
             QList<QString> strvec;
 
-            foreach(QByteArray y, x.split(',')){
+            if(x != ""){
 
-                strvec.append(y);
+                foreach(QByteArray y, x.split(',')){
+
+                    strvec.append(y);
+
+                }
+
+                list.append(strvec);
 
             }
-
-            list.append(strvec);
 
         }
 

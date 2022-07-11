@@ -7,9 +7,8 @@ Book::Book()
     QList<QList<QString>> _books = obj.Read();
 
     foreach(QList<QString> x, _books){
-        foreach(QString y, x){
-            qDebug() << "List items = " << x.at(0) << " - " << x.at(1);
-        }
+        Book book(x.at(0), x.at(1).toInt());
+        qDebug() << "List items = " << x.at(0) << " - " << x.at(1);
     }
 
 }
