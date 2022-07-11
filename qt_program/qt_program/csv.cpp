@@ -6,14 +6,34 @@ Csv::Csv(QString filename): _file(filename){
     }
 }
 
-QStringList Csv::Read(){
-    QStringList list;
+QList<QList<QString>> Csv::Read(){
+
+    QList<QList<QString>> list;
+
     while(!_file.atEnd()) {
+
         QByteArray line = _file.readLine();
-        list.append(line.split(',').first());
+
+        foreach(QByteArray x, line.split('\n')){
+
+            QList<QString> strvec;
+
+            foreach(QByteArray y, x.split(',')){
+
+                strvec.append(y);
+
+            }
+
+            list.append(strvec);
+
+        }
+
     }
+
     qDebug() << list;
+
     return list;
+
 }
 
 void Csv::Create(){

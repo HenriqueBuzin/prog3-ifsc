@@ -9,7 +9,7 @@ class Csv
 {
 public:
     Csv(QString filename);
-    QStringList Read();
+    QList<QList<QString>> Read();
     void Create();
     ~Csv();
 

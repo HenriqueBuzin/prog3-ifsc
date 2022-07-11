@@ -2,13 +2,15 @@
 
 Book::Book()
 {
-
-    QString _file = "D:/Github/prog3-ifsc/qt_program/qt_program/books.csv";
+    QString _file = "books.csv";
     Csv obj(_file);
-    QStringList _books = obj.Read();
+    QList<QList<QString>> _books = obj.Read();
 
-    foreach(QString item, _books)
-        qDebug() << "List items = " << item;
+    foreach(QList<QString> x, _books){
+        foreach(QString y, x){
+            qDebug() << "List items = " << x.at(0) << " - " << x.at(1);
+        }
+    }
 
 }
 
