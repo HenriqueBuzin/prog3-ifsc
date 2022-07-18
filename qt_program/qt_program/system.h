@@ -7,8 +7,7 @@
 
 #include "formItem.h"
 #include "deleteItem.h"
-#include "book.h"
-#include "component.h"
+#include "item.h"
 
 class System: public QWidget
 {
@@ -18,8 +17,7 @@ public:
     explicit System(QWidget *parent = nullptr);
 
 public slots:
-    void book();
-    void component();
+    void item();
     void updateItem();
     void deleteItem();
 

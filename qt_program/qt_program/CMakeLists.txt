@@ -15,10 +15,6 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-    book.cpp
-    book.h
-    component.cpp
-    component.h
     formItem.cpp
     formItem.h
     deleteItem.h
@@ -30,8 +26,7 @@ set(PROJECT_SOURCES
     system.h
     warehouse.cpp
     warehouse.h
-    books.csv
-    components.csv
+    items.csv
     csv.h
     csv.cpp
 )
