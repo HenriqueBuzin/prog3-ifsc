@@ -3,19 +3,20 @@
 
 #include <QWidget>
 #include <QtWidgets>
+#include <QDebug>
 
-class Component: public QWidget
+#include "csv.h"
+
+class Component
 {
-    Q_OBJECT
 
 public:
-    explicit Component(QWidget *parent = nullptr);
-
-private:
-    QHBoxLayout * _layout;
-    QLabel * _label;
-    QPushButton * _button;
-    QLineEdit * _input;
+    Component();
+    Component(QString name, int quantity);
+    QStringList _components;
+    QString _file;
+    QString _name;
+    int _quantity;
 
 };
 

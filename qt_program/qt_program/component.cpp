@@ -1,27 +1,15 @@
 #include "component.h"
 
-Component::Component(QWidget *parent)
-    : QWidget{parent}
+Component::Component()
 {
-    _layout = new QHBoxLayout;
+    QString _file = "components.csv";
+    Csv obj(_file);
+    QList<QList<QString>> _components = obj.Read();
 
-    _label = new QLabel("Nome");
-    _layout->addWidget(_label);
-
-    _input = new QLineEdit("");
-    _layout->addWidget(_input);
-
-    _label = new QLabel("Voltage");
-    _layout->addWidget(_label);
-
-    _input = new QLineEdit("");
-    _layout->addWidget(_input);
-
-    _button = new QPushButton("Cancelar");
-    _layout->addWidget(_button);
-
-    _button = new QPushButton("Cadastrar");
-    _layout->addWidget(_button);
-
-    this->setLayout(_layout);
+    foreach(QList<QString> x, _components){
+        Component component(x.at(0), x.at(1).toInt());
+        qDebug() << "List items = " << x.at(0) << " - " << x.at(1);
+    }
 }
+
+Component::Component(QString name, int quantity): _name(name), _quantity(quantity) {}

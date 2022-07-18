@@ -19,8 +19,6 @@ set(PROJECT_SOURCES
     book.h
     component.cpp
     component.h
-    file.cpp
-    file.h
     formItem.cpp
     formItem.h
     deleteItem.h

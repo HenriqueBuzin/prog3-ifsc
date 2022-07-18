@@ -1,8 +1,13 @@
 #include "system.h"
 
-void System::teste()
+void System::book()
 {
     Book* ptr = new Book();
+}
+
+void System::component()
+{
+    Component* ptr = new Component();
 }
 
 void System::updateItem()
@@ -34,8 +39,12 @@ System::System(QWidget *parent)
     QObject::connect(_button, SIGNAL(clicked()), this, SLOT(deleteItem()));
     _rightLayout->addWidget(_button);
 
-    _button = new QPushButton("Teste");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(teste()));
+    _button = new QPushButton("Book");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(book()));
+    _rightLayout->addWidget(_button);
+
+    _button = new QPushButton("Component");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(component()));
     _rightLayout->addWidget(_button);
 
     _rightLayout->addStretch();
