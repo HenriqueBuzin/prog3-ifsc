@@ -30,6 +30,8 @@ set(PROJECT_SOURCES
     system.h
     warehouse.cpp
     warehouse.h
+    books.csv
+    components.csv
     csv.h
     csv.cpp
 )
