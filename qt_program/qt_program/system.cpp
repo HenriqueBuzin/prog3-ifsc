@@ -24,7 +24,20 @@ System::System(QWidget *parent)
     _topLayout = new QHBoxLayout;
     _rightLayout = new QVBoxLayout;
 
-    _table = new QTableWidget(2, 2, this);
+
+    Item item;
+
+    _table = new QTableWidget();
+    _table->setRowCount(item.rowSize());
+    _table->setColumnCount(item.columnSize());
+
+    foreach(Item x, item.getItem()){
+        qDebug() << item.getType(x);
+    }
+
+    QTableWidgetItem *Items= new QTableWidgetItem("A");
+    _table->setItem(0, 0, Items);
+
     _topLayout->addWidget(_table);
 
     _button = new QPushButton("Atualizar Items");

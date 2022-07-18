@@ -11,11 +11,15 @@ class Item
 {
 public:
     Item();
-    QVector<Item*> getItem();
+    QVector<Item> getItem();
+    int rowSize();
+    int columnSize();
+
+    QString getType(Item item);
 
 private:
 
-    QVector<Item*> _item;
+    QVector<Item> _item;
 
     QString _type;
     QString _name;
@@ -24,7 +28,9 @@ private:
     int _voltage;
     int _quantity;
 
-    void setItem(Item* book);
+    int _column;
+
+    void setItem(Item book);
 
     Item(QString type, QString name, QString url, QString isbn, int quantity);
     Item(QString type, QString name, QString url, int voltage, int quantity);
