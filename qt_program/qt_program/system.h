@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QtWidgets>
+#include <QDebug>
 
 #include "formItem.h"
 #include "deleteItem.h"

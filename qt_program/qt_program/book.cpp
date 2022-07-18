@@ -4,11 +4,14 @@ Book::Book()
 {
     QString _file = "books.csv";
     Csv obj(_file);
-    QList<QList<QString>> _books = obj.Read();
+    QVector<Book> _books;
 
-    foreach(QList<QString> x, _books){
-        Book book(x.at(0), x.at(1).toInt());
+    foreach(QList<QString> x, obj.Read()){
+
+        _books.append(Book(x.at(0), x.at(1).toInt()));
+
         qDebug() << "List items = " << x.at(0) << " - " << x.at(1);
+
     }
 
 }

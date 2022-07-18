@@ -12,12 +12,13 @@ class Book
 
 public:
     Book();
+    QVector<Book> _books;
+
+private:
     Book(QString name, int quantity);
-    QStringList _books;
     QString _file;
     QString _name;
     int _quantity;
-
 };
 
 #endif // BOOK_H

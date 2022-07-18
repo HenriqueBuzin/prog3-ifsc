@@ -12,8 +12,10 @@ class Component
 
 public:
     Component();
+    QVector<Component> _components;
+
+private:
     Component(QString name, int quantity);
-    QStringList _components;
     QString _file;
     QString _name;
     int _quantity;

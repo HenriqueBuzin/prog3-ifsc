@@ -3,11 +3,13 @@
 void System::book()
 {
     Book* ptr = new Book();
+    qDebug() << "Livros: " << ptr->_books.length();
 }
 
 void System::component()
 {
     Component* ptr = new Component();
+    qDebug() << "Componentes: " << ptr->_components.length();
 }
 
 void System::updateItem()
