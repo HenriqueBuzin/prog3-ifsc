@@ -4,11 +4,14 @@
 #include <QWidget>
 #include <QtWidgets>
 
-class FormItem: public QWidget
+#include "item.h"
+
+class Form: public QWidget
 {
     Q_OBJECT
 public:
-    explicit FormItem(QWidget *parent = nullptr);
+    explicit Form(QString type, QWidget *parent = nullptr);
+    explicit Form(Item item, QWidget *parent = nullptr);
 
 private:
     QHBoxLayout * _topLayout;

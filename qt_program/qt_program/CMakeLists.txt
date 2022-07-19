@@ -15,10 +15,10 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-    formItem.cpp
-    formItem.h
-    deleteItem.h
-    deleteItem.cpp
+    form.cpp
+    form.h
+    exclude.h
+    exclude.cpp
     item.cpp
     item.h
     main.cpp

@@ -1,6 +1,6 @@
-#include "deleteItem.h"
+#include "exclude.h"
 
-DeleteItem::DeleteItem(QWidget *parent)
+Exclude::Exclude(Item type, QWidget *parent)
     : QWidget{parent}
 {
     _layout = new QHBoxLayout;

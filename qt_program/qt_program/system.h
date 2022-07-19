@@ -5,8 +5,8 @@
 #include <QtWidgets>
 #include <QDebug>
 
-#include "formItem.h"
-#include "deleteItem.h"
+#include "form.h"
+#include "exclude.h"
 #include "item.h"
 
 class System: public QWidget
@@ -17,9 +17,8 @@ public:
     explicit System(QWidget *parent = nullptr);
 
 public slots:
-    void item();
-    void updateItem();
-    void deleteItem();
+    void form(QString type);
+    void exclude(Item item);
 
 private:
     QHBoxLayout * _topLayout;

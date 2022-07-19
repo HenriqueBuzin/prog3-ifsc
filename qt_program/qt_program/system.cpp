@@ -1,20 +1,14 @@
 #include "system.h"
 
-void System::item()
+void System::form(QString type)
 {
-    Item* ptr = new Item();
-    qDebug() << "Componentes: " << ptr->getItem().size();
-}
-
-void System::updateItem()
-{
-    FormItem* ptr = new FormItem();
+    Form* ptr = new Form(type);
     ptr->show();
 }
 
-void System::deleteItem()
+void System::exclude(Item item)
 {
-    DeleteItem* ptr = new DeleteItem();
+    Exclude* ptr = new Exclude(item);
     ptr->show();
 }
 
@@ -32,6 +26,11 @@ System::System(QWidget *parent)
     _table->setColumnCount(item.columnSize());
 
     foreach(Item x, item.getItem()){
+        if(item.getType(x) == "Livro") {
+
+        }else{
+
+        }
         qDebug() << item.getType(x);
     }
 
@@ -40,16 +39,24 @@ System::System(QWidget *parent)
 
     _topLayout->addWidget(_table);
 
-    _button = new QPushButton("Atualizar Items");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(updateItem()));
+    _button = new QPushButton("Cadastrar Livro");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem("Livro")));
+    _rightLayout->addWidget(_button);
+
+    _button = new QPushButton("Cadastrar Componente");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem("Componente")));
+    _rightLayout->addWidget(_button);
+
+    _button = new QPushButton("Atualizar Livro");
+    //QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem()));
+    _rightLayout->addWidget(_button);
+
+    _button = new QPushButton("Atualizar Componente");
+    //QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem()));
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Excluir");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(deleteItem()));
-    _rightLayout->addWidget(_button);
-
-    _button = new QPushButton("Item");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(item()));
+    //QObject::connect(_button, SIGNAL(clicked()), this, SLOT(deleteItem()));
     _rightLayout->addWidget(_button);
 
     _rightLayout->addStretch();

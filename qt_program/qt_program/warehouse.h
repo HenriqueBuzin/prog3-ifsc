@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
-#include "System.h"
+
+#include "system.h"
 
 class Warehouse : public QMainWindow
 {

@@ -16,23 +16,35 @@ public:
     int columnSize();
 
     QString getType(Item item);
+    QString getName(Item item);
+    QString getUrl(Item item);
+    QString getIsbn(Item item);
+    QString getAuthor(Item item);
+    int getYear(Item item);
+    int getQuantity(Item item);
+    int getVoltage(Item item);
 
 private:
 
     QVector<Item> _item;
 
-    QString _type;
-    QString _name;
-    QString _url;
-    QString _isbn;
-    int _voltage;
-    int _quantity;
-
     int _column;
 
     void setItem(Item book);
 
-    Item(QString type, QString name, QString url, QString isbn, int quantity);
+    QString _type;
+    QString _name;
+    QString _url;
+    int _quantity;
+
+    QString _isbn;
+    QString _author;
+    int _year;
+
+    int _voltage;
+
+    Item(QString type, QString name, QString url, QString isbn, QString author, int year,int quantity);
+
     Item(QString type, QString name, QString url, int voltage, int quantity);
 
 };
