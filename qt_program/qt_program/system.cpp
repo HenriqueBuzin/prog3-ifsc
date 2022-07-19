@@ -1,8 +1,14 @@
 #include "system.h"
 
-void System::form(QString type)
+void System::component()
 {
-    Form* ptr = new Form(type);
+    Form* ptr = new Form("Componente");
+    ptr->show();
+}
+
+void System::book()
+{
+    Form* ptr = new Form("Livro");
     ptr->show();
 }
 
@@ -17,7 +23,6 @@ System::System(QWidget *parent)
 {
     _topLayout = new QHBoxLayout;
     _rightLayout = new QVBoxLayout;
-
 
     Item item;
 
@@ -40,11 +45,11 @@ System::System(QWidget *parent)
     _topLayout->addWidget(_table);
 
     _button = new QPushButton("Cadastrar Livro");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem("Livro")));
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(book()));
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Cadastrar Componente");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem("Componente")));
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(component()));
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Atualizar Livro");

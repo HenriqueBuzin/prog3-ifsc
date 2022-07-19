@@ -11,7 +11,6 @@ class Form: public QWidget
     Q_OBJECT
 public:
     explicit Form(QString type, QWidget *parent = nullptr);
-    explicit Form(Item item, QWidget *parent = nullptr);
 
 private:
     QHBoxLayout * _topLayout;

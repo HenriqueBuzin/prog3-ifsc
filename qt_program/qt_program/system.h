@@ -17,7 +17,8 @@ public:
     explicit System(QWidget *parent = nullptr);
 
 public slots:
-    void form(QString type);
+    void component();
+    void book();
     void exclude(Item item);
 
 private:
