@@ -17,9 +17,9 @@ public:
     explicit System(QWidget *parent = nullptr);
 
 public slots:
-    void component();
     void book();
-    void exclude(Item item);
+    void component();
+    void exclude();
 
 private:
     QHBoxLayout * _topLayout;

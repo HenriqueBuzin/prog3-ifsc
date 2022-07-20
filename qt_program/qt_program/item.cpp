@@ -2,10 +2,7 @@
 
 Item::Item()
 {
-
-    QString _file = "D:/Github/prog3-ifsc/qt_program/qt_program/items.csv";
-
-    Csv _obj(_file);
+    Csv _obj;
 
     _column = 0;
 

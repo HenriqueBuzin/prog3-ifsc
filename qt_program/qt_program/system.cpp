@@ -1,21 +1,25 @@
 #include "system.h"
 
-void System::component()
-{
-    Form* ptr = new Form("Componente");
-    ptr->show();
-}
-
 void System::book()
 {
     Form* ptr = new Form("Livro");
     ptr->show();
 }
 
-void System::exclude(Item item)
+void System::component()
 {
-    Exclude* ptr = new Exclude(item);
+    Form* ptr = new Form("Componente");
     ptr->show();
+}
+
+void System::exclude()
+{
+
+    qDebug() << _table->currentRow();
+    _table->removeRow(_table->currentRow());
+
+    // Exclude* ptr = new Exclude(item);
+    // ptr->show();
 }
 
 System::System(QWidget *parent)
@@ -34,10 +38,7 @@ System::System(QWidget *parent)
 
     QVector<QTableWidgetItem*> itemB;
 
-
-
     QVector<Item> data = item.getItem();
-
 
     for(int x = 0; x < item.rowSize(); x++){
 
@@ -89,7 +90,8 @@ System::System(QWidget *parent)
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Excluir");
-    //QObject::connect(_button, SIGNAL(clicked()), this, SLOT(deleteItem()));
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(exclude()));
+
     _rightLayout->addWidget(_button);
 
     _rightLayout->addStretch();

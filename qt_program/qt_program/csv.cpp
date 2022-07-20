@@ -40,9 +40,16 @@ QList<QList<QString>> Csv::Read(){
 
 }
 
+
+
+
 void Csv::Create(){
     QTextStream stream(&_file);
     stream << "a" << "," << "b" << "\n";
+}
+
+void Csv::getItem(){
+
 }
 
 Csv::~Csv(){
