@@ -30,17 +30,45 @@ System::System(QWidget *parent)
     _table->setRowCount(item.rowSize());
     _table->setColumnCount(item.columnSize());
 
-    foreach(Item x, item.getItem()){
-        if(item.getType(x) == "Livro") {
+    QVector<QVector<QTableWidgetItem*>> itemA;
 
+    QVector<QTableWidgetItem*> itemB;
+
+
+
+    QVector<Item> data = item.getItem();
+
+
+    for(int x = 0; x < item.rowSize(); x++){
+
+        if(item.getType(data[x]) == "Livro"){
+            itemB.insert(0, new QTableWidgetItem(item.getType(data[x])));
+            itemB.insert(1, new QTableWidgetItem(item.getName(data[x])));
+            itemB.insert(2, new QTableWidgetItem(item.getUrl(data[x])));
+            itemB.insert(3, new QTableWidgetItem(item.getAuthor(data[x])));
+            itemB.insert(4, new QTableWidgetItem(item.getYear(data[x])));
+            itemB.insert(5, new QTableWidgetItem(item.getQuantity(data[x])));
         }else{
-
+            itemB.insert(0, new QTableWidgetItem(item.getType(data[x])));
+            itemB.insert(1, new QTableWidgetItem(item.getName(data[x])));
+            itemB.insert(2, new QTableWidgetItem(item.getUrl(data[x])));
+            itemB.insert(3, new QTableWidgetItem(item.getVoltage(data[x])));
+            itemB.insert(4, new QTableWidgetItem(item.getQuantity(data[x])));
         }
-        qDebug() << item.getType(x);
+
+        itemA.push_back(itemB);
+
     }
 
-    QTableWidgetItem *Items= new QTableWidgetItem("A");
-    _table->setItem(0, 0, Items);
+    for(int x = 0; x < item.rowSize(); x++){
+
+        for(int y = 0; y < item.columnSize(); y++){
+
+            _table->setItem(x, y, itemA[x][y]);
+
+        }
+
+    }
 
     _topLayout->addWidget(_table);
 

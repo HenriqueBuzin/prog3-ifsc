@@ -7,19 +7,22 @@ Item::Item()
 
     Csv _obj(_file);
 
+    _column = 0;
+
     foreach(QList<QString> x, _obj.Read()){
 
-        _column = x.size();
-
-        if(x.at(0) == "Livro"){
-            setItem(Item(x.at(0), x.at(1), x.at(2), x.at(3).toInt(), x.at(4).toInt()));
-        }else{
-            setItem(Item(x.at(0), x.at(1), x.at(2), x.at(3).toInt(), x.at(4).toInt()));
+        if(_column < x.size()){
+            _column = x.size();
         }
 
-        // qDebug() << "List" << x.at(0) << " - " << x.at(1) << " - " << x.at(2) << " - " << x.at(3) << " - " << x.at(4).toInt();
+        if(x.at(0) == "Livro"){
+            setItem(Item(x.at(0), x.at(1), x.at(2), x.at(3), x.at(4), x.at(5)));
+        }else{
+            setItem(Item(x.at(0), x.at(1), x.at(2), x.at(3), x.at(4)));
+        }
 
     }
+
 }
 
 void Item::setItem(Item book){
@@ -38,10 +41,10 @@ int Item::columnSize(){
     return _column;
 }
 
-Item::Item(QString type, QString name, QString url, QString isbn, QString author, int year, int quantity)
-    : _type(type), _name(name), _url(url), _isbn(isbn), _author(author), _year(year), _quantity(quantity) { }
+Item::Item(QString type, QString name, QString url, QString author, QString year, QString quantity)
+    : _type(type), _name(name), _url(url), _author(author), _year(year), _quantity(quantity) { }
 
-Item::Item(QString type, QString name, QString url, int voltage, int quantity)
+Item::Item(QString type, QString name, QString url, QString voltage, QString quantity)
     : _type(type), _name(name), _url(url), _voltage(voltage), _quantity(quantity) { }
 
 QString Item::getType(Item item){
@@ -55,18 +58,19 @@ QString Item::getName(Item item){
 QString Item::getUrl(Item item){
     return item._url;
 }
-QString Item::getIsbn(Item item){
-    return item._isbn;
+
+QString Item::getVoltage(Item item){
+    return item._voltage;
 }
+
 QString Item::getAuthor(Item item){
     return item._author;
 }
-int Item::getYear(Item item){
+
+QString Item::getYear(Item item){
     return item._year;
 }
-int Item::getQuantity(Item item){
+
+QString Item::getQuantity(Item item){
     return item._quantity;
-}
-int Item::getVoltage(Item item){
-    return item._voltage;
 }

@@ -18,11 +18,10 @@ public:
     QString getType(Item item);
     QString getName(Item item);
     QString getUrl(Item item);
-    QString getIsbn(Item item);
+    QString getVoltage(Item item);
     QString getAuthor(Item item);
-    int getYear(Item item);
-    int getQuantity(Item item);
-    int getVoltage(Item item);
+    QString getYear(Item item);
+    QString getQuantity(Item item);
 
 private:
 
@@ -35,17 +34,14 @@ private:
     QString _type;
     QString _name;
     QString _url;
-    int _quantity;
-
-    QString _isbn;
+    QString _voltage;
     QString _author;
-    int _year;
+    QString _year;
+    QString _quantity;
 
-    int _voltage;
+    Item(QString type, QString name, QString url, QString voltage, QString quantity);
 
-    Item(QString type, QString name, QString url, QString isbn, QString author, int year,int quantity);
-
-    Item(QString type, QString name, QString url, int voltage, int quantity);
+    Item(QString type, QString name, QString url, QString author, QString year, QString quantity);
 
 };
 
