@@ -8,7 +8,7 @@ class Database
 {
 public:
     Database(){};
-    virtual void getItem() =0;
+    virtual void getItem(int i) =0;
 
 };
 

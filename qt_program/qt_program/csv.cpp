@@ -6,9 +6,9 @@ Csv::Csv(QString filename): _file(filename){
     }
 }
 
-QList<QList<QString>> Csv::Read(){
+QVector<QVector<QString>> Csv::read(){
 
-    QList<QList<QString>> list;
+    QVector<QVector<QString>> _list;
 
     while(!_file.atEnd()) {
 
@@ -16,7 +16,7 @@ QList<QList<QString>> Csv::Read(){
 
         foreach(QByteArray x, line.split('\n')){
 
-            QList<QString> strvec;
+            QVector<QString> strvec;
 
             if(x != ""){
 
@@ -26,7 +26,7 @@ QList<QList<QString>> Csv::Read(){
 
                 }
 
-                list.append(strvec);
+                _list.append(strvec);
 
             }
 
@@ -34,21 +34,19 @@ QList<QList<QString>> Csv::Read(){
 
     }
 
-    qDebug() << list;
+    qDebug() << _list;
 
-    return list;
+    return _list;
 
 }
 
-
-
-
-void Csv::Create(){
+void Csv::create(){
     QTextStream stream(&_file);
     stream << "a" << "," << "b" << "\n";
 }
 
-void Csv::getItem(){
+void Csv::getItem(int i){
+
 
 }
 
