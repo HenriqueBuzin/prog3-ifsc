@@ -4,14 +4,12 @@
 #include <QWidget>
 #include <QtWidgets>
 
-#include "item.h"
-
 class Exclude: public QWidget
 {
 
     Q_OBJECT
 public:
-    explicit Exclude(Item item, QWidget *parent = nullptr);
+    explicit Exclude(QWidget *parent = nullptr);
 
 private:
     QHBoxLayout * _layout;

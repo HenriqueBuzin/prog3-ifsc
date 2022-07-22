@@ -4,11 +4,6 @@ Csv::Csv(QString filename): _file(filename){
     if(!_file.open(QIODeviceBase::ReadWrite)){
         qDebug() << _file.errorString();
     }
-}
-
-QVector<QVector<QString>> Csv::read(){
-
-    QVector<QVector<QString>> _list;
 
     while(!_file.atEnd()) {
 
@@ -16,28 +11,21 @@ QVector<QVector<QString>> Csv::read(){
 
         foreach(QByteArray x, line.split('\n')){
 
-            QVector<QString> strvec;
-
             if(x != ""){
 
-                foreach(QByteArray y, x.split(',')){
+                QVector<QByteArray> y = x.split(',');
 
-                    strvec.append(y);
-
+                if(y[0] == "Livro"){
+                    _list.push_back(Item(y[0], y[1], y[2], y[3], y[4], y[5]));
+                }else{
+                   _list.push_back(Item(y[0], y[1], y[2], y[3], y[4]));
                 }
-
-                _list.append(strvec);
 
             }
 
         }
 
     }
-
-    qDebug() << _list;
-
-    return _list;
-
 }
 
 void Csv::create(){

@@ -1,6 +1,6 @@
 #include "exclude.h"
 
-Exclude::Exclude(Item type, QWidget *parent)
+Exclude::Exclude(QWidget *parent)
     : QWidget{parent}
 {
     _layout = new QHBoxLayout;

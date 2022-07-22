@@ -4,8 +4,6 @@
 #include <QWidget>
 #include <QtWidgets>
 
-#include "item.h"
-
 class Form: public QWidget
 {
     Q_OBJECT

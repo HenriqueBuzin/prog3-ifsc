@@ -7,7 +7,6 @@
 
 #include "form.h"
 #include "exclude.h"
-#include "item.h"
 
 class System: public QWidget
 {

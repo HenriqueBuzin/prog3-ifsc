@@ -18,9 +18,6 @@ void System::exclude()
 
     qDebug() << _table->currentRow();
     _table->removeRow(_table->currentRow());
-
-    // Exclude* ptr = new Exclude(item);
-    // ptr->show();
 }
 
 System::System(QWidget *parent)
@@ -29,8 +26,6 @@ System::System(QWidget *parent)
 
     _topLayout = new QHBoxLayout;
     _rightLayout = new QVBoxLayout;
-
-    Item item;
 
     _table = new QTableWidget();
     _topLayout->addWidget(_table);
@@ -44,11 +39,9 @@ System::System(QWidget *parent)
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Atualizar Livro");
-    //QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem()));
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Atualizar Componente");
-    //QObject::connect(_button, SIGNAL(clicked()), this, SLOT(formItem()));
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Excluir");
