@@ -6,9 +6,7 @@
 #include <QDebug>
 
 #include "form.h"
-#include "exclude.h"
 #include "csv.h"
-#include "database.h"
 
 class System: public QWidget
 {
@@ -20,7 +18,7 @@ public:
 public slots:
     void book();
     void component();
-    void exclude();
+    void remove();
 
 private:
     QHBoxLayout * _topLayout;

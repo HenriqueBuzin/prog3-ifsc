@@ -1,5 +1,15 @@
 #include "form.h"
 
+void Form::access(){
+
+    qDebug() << _inputName->text();
+    qDebug() << _inputUrl->text();
+    qDebug() << _inputParam1->text();
+    qDebug() << _inputParam2->text();
+    qDebug() << _inputParam3->text();
+
+}
+
 Form::Form(QString type, QWidget *parent)
     : QWidget{parent}
 {   
@@ -9,39 +19,39 @@ Form::Form(QString type, QWidget *parent)
 
     _label = new QLabel("Nome");
     _leftLayout->addWidget(_label);
-    _input = new QLineEdit("");
-    _leftLayout->addWidget(_input);
+    _inputName = new QLineEdit("");
+    _leftLayout->addWidget(_inputName);
 
     _label = new QLabel("Url");
     _leftLayout->addWidget(_label);
-    _input = new QLineEdit("");
-    _leftLayout->addWidget(_input);
+    _inputUrl = new QLineEdit("");
+    _leftLayout->addWidget(_inputUrl);
 
     if(type == "Livro"){
         _label = new QLabel("Autor");
         _leftLayout->addWidget(_label);
-        _input = new QLineEdit("");
-        _leftLayout->addWidget(_input);
+        _inputParam1 = new QLineEdit("");
+        _leftLayout->addWidget(_inputParam1);
 
         _label = new QLabel("Editora");
         _leftLayout->addWidget(_label);
-        _input = new QLineEdit("");
-        _leftLayout->addWidget(_input);
+        _inputParam2 = new QLineEdit("");
+        _leftLayout->addWidget(_inputParam2);
 
         _label = new QLabel("Ano");
         _leftLayout->addWidget(_label);
-        _input = new QLineEdit("");
-        _leftLayout->addWidget(_input);
+        _inputParam3 = new QLineEdit("");
+        _leftLayout->addWidget(_inputParam3);
     }else{
         _label = new QLabel("Tensão");
         _leftLayout->addWidget(_label);
-        _input = new QLineEdit("");
-        _leftLayout->addWidget(_input);
+        _inputParam1 = new QLineEdit("");
+        _leftLayout->addWidget(_inputParam1);
 
         _label = new QLabel("Quantidade");
         _leftLayout->addWidget(_label);
-        _input = new QLineEdit("");
-        _leftLayout->addWidget(_input);
+        _inputParam2 = new QLineEdit("");
+        _leftLayout->addWidget(_inputParam2);
     }
 
     _leftLayout->addStretch();
@@ -49,6 +59,7 @@ Form::Form(QString type, QWidget *parent)
     _topLayout->addLayout(_leftLayout);
 
     _button = new QPushButton("Cadastrar");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(access()));
     _rightLayout->addWidget(_button);
     _rightLayout->addStretch();
 

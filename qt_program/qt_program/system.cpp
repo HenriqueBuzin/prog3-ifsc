@@ -13,10 +13,8 @@ void System::component()
     ptr->show();
 }
 
-void System::exclude()
+void System::remove()
 {
-
-    //qDebug() << _table->currentRow();
 
     _table->removeRow(_table->currentRow());
 
@@ -46,14 +44,9 @@ System::System(QWidget *parent)
 
         _table->setItem(i, 0, new QTableWidgetItem(x));
 
-        qDebug() << csv.getItem(i).getParam2();
-
         i++;
 
     }
-
-
-
 
     _topLayout->addWidget(_table);
 
