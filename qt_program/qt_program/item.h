@@ -13,6 +13,13 @@ public:
 
     Item(QString type, QString name, QString url, QString param1, QString param2, QString param3);
 
+    QString getType();
+    QString getName();
+    QString getUrl();
+    QString getParam1();
+    QString getParam2();
+    QString getParam3();
+
 private:
 
     QString _type;

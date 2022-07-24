@@ -7,6 +7,8 @@
 
 #include "form.h"
 #include "exclude.h"
+#include "csv.h"
+#include "database.h"
 
 class System: public QWidget
 {

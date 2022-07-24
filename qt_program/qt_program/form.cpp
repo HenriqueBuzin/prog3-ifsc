@@ -2,7 +2,7 @@
 
 Form::Form(QString type, QWidget *parent)
     : QWidget{parent}
-{
+{   
     _topLayout = new QHBoxLayout;
     _rightLayout = new QVBoxLayout;
     _leftLayout = new QVBoxLayout;
@@ -18,12 +18,12 @@ Form::Form(QString type, QWidget *parent)
     _leftLayout->addWidget(_input);
 
     if(type == "Livro"){
-        _label = new QLabel("ISBN");
+        _label = new QLabel("Autor");
         _leftLayout->addWidget(_label);
         _input = new QLineEdit("");
         _leftLayout->addWidget(_input);
 
-        _label = new QLabel("Autor");
+        _label = new QLabel("Editora");
         _leftLayout->addWidget(_label);
         _input = new QLineEdit("");
         _leftLayout->addWidget(_input);

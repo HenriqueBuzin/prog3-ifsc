@@ -18,8 +18,6 @@ set(PROJECT_SOURCES
     database.h
     form.cpp
     form.h
-    exclude.h
-    exclude.cpp
     item.cpp
     item.h
     main.cpp

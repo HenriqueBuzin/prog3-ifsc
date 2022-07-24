@@ -16,8 +16,13 @@ void System::component()
 void System::exclude()
 {
 
-    qDebug() << _table->currentRow();
+    //qDebug() << _table->currentRow();
+
     _table->removeRow(_table->currentRow());
+
+    Csv csv;
+    csv.removeItem(_table->currentRow());
+
 }
 
 System::System(QWidget *parent)
@@ -28,6 +33,28 @@ System::System(QWidget *parent)
     _rightLayout = new QVBoxLayout;
 
     _table = new QTableWidget();
+
+    Csv csv;
+
+    _table->setRowCount(csv.getSize());
+
+    _table->setColumnCount(1);
+
+    int i = 0;
+
+    foreach(QString x, csv.getItemsFormatted()){
+
+        _table->setItem(i, 0, new QTableWidgetItem(x));
+
+        qDebug() << csv.getItem(i).getParam2();
+
+        i++;
+
+    }
+
+
+
+
     _topLayout->addWidget(_table);
 
     _button = new QPushButton("Cadastrar Livro");
