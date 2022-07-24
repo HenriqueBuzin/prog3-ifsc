@@ -25,6 +25,10 @@ private:
     QVBoxLayout * _rightLayout;
     QPushButton * _button;
     QTableWidget * _table;
+
+    QStringList _horizontalLabels;
+    QStringList _verticalLabels;
+
 };
 
 #endif // SYSTEM_H

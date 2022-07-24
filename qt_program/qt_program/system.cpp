@@ -38,15 +38,24 @@ System::System(QWidget *parent)
 
     _table->setColumnCount(1);
 
+    _horizontalLabels.append("");
+    _table->setHorizontalHeaderLabels(_horizontalLabels);
+
     int i = 0;
+
+    QStringList _verticalLabels;
 
     foreach(QString x, csv.getItemsFormatted()){
 
         _table->setItem(i, 0, new QTableWidgetItem(x));
 
+        _verticalLabels.append(QString::number(i));
+
         i++;
 
     }
+
+    _table->setVerticalHeaderLabels(_verticalLabels);
 
     _topLayout->addWidget(_table);
 
@@ -65,7 +74,7 @@ System::System(QWidget *parent)
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Excluir");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(exclude()));
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(remove()));
 
     _rightLayout->addWidget(_button);
 
