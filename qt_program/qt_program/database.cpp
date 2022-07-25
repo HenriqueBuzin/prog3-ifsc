@@ -13,11 +13,7 @@ void Database::save(){
 }
 
 Item Database::getItem(int i){
-    return _list.at(i);
-}
-
-QVector<Item*> Database::getItems(){
-    return _list;
+    return *_list.at(i);
 }
 
 void Database::setItem(QString type, QString name, QString url, QString param1, QString param2, QString param3){

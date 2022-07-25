@@ -18,12 +18,12 @@ void System::remove()
 
     _table->removeRow(_table->currentRow());
 
-    _database.removeItem(_table->currentRow());
+   // _database.removeItem(_table->currentRow());
 }
 
 void System::save(){
 
-    _database.save();
+   // _database.save();
 }
 
 void System::update(){
@@ -69,6 +69,7 @@ System::System(QWidget *parent)
     _table->setVerticalHeaderLabels(_verticalLabels);
 
     _topLayout->addWidget(_table);
+
 
     _button = new QPushButton("Cadastrar Livro");
     QObject::connect(_button, SIGNAL(clicked()), this, SLOT(book()));
