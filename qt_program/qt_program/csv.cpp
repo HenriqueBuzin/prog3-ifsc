@@ -1,7 +1,7 @@
 #include "csv.h"
 
 Csv::Csv(QString filename): _file(filename){
-    if(!_file.open(QIODeviceBase::ReadWrite)){
+    if(!_file.open(QIODeviceBase::ReadWrite | QIODevice::Text)){
         qDebug() << _file.errorString();
     }
 
@@ -58,7 +58,7 @@ void Csv::persist(){
         data += x + "\n";
     }
 
-    qDebug() << "Daata: " << data;
+    qDebug() << "Data: " << data;
 
     QTextStream stream(&_file);
     stream << data;
