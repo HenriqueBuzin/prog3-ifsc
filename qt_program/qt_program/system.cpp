@@ -18,12 +18,12 @@ void System::remove()
 
     _table->removeRow(_table->currentRow());
 
-   // _database.removeItem(_table->currentRow());
+    _database.removeItem(_table->currentRow());
 }
 
 void System::save(){
 
-   // _database.save();
+    _database.save();
 }
 
 void System::update(){
