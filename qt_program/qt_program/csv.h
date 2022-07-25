@@ -21,6 +21,8 @@ protected:
 
     void persist();
 
+    void read();
+
 private:
 
     QFile _file;

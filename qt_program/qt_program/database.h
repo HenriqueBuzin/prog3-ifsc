@@ -30,6 +30,8 @@ public:
 
     void save();
 
+    void load();
+
 };
 
 #endif // UPDATEITEM_H

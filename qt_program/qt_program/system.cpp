@@ -15,17 +15,22 @@ void System::component()
 
 void System::remove()
 {
+
     _table->removeRow(_table->currentRow());
 
-    Database database;
-    database.removeItem(_table->currentRow());
+    _database.removeItem(_table->currentRow());
 }
 
 void System::save(){
 
-    Database database;
+    _database.save();
+}
 
-    database.save();
+void System::update(){
+
+    Form* ptr = new Form(_table->currentRow());
+    ptr->show();
+
 }
 
 System::System(QWidget *parent)
@@ -37,9 +42,9 @@ System::System(QWidget *parent)
 
     _table = new QTableWidget();
 
-    Database database;
+    _database.load();
 
-    _table->setRowCount(database.getSize());
+    _table->setRowCount(_database.getSize());
 
     _table->setColumnCount(1);
 
@@ -51,7 +56,7 @@ System::System(QWidget *parent)
 
     QStringList _verticalLabels;
 
-    foreach(QString x, database.getItemsFormatted()){
+    foreach(QString x, _database.getItemsFormatted()){
 
         _table->setItem(i, 0, new QTableWidgetItem(x));
 
@@ -73,10 +78,8 @@ System::System(QWidget *parent)
     QObject::connect(_button, SIGNAL(clicked()), this, SLOT(component()));
     _rightLayout->addWidget(_button);
 
-    _button = new QPushButton("Atualizar Livro");
-    _rightLayout->addWidget(_button);
-
-    _button = new QPushButton("Atualizar Componente");
+    _button = new QPushButton("Atualizar");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(update()));
     _rightLayout->addWidget(_button);
 
     _button = new QPushButton("Excluir");

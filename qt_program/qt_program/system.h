@@ -20,6 +20,7 @@ public slots:
     void component();
     void remove();
     void save();
+    void update();
 
 private:
     QHBoxLayout * _topLayout;
@@ -30,6 +31,8 @@ private:
 
     QStringList _horizontalLabels;
     QStringList _verticalLabels;
+
+    Database _database;
 
 };
 

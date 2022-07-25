@@ -6,11 +6,15 @@
 
 #include "database.h"
 
+#include "item.h"
+
 class Form: public QWidget
 {
     Q_OBJECT
 public:
     explicit Form(QString type, QWidget *parent = nullptr);
+
+    explicit Form(int row, QWidget *parent = nullptr);
 
 public slots:
     void registerItem();
@@ -29,6 +33,8 @@ private:
     QLineEdit * _inputParam3;
 
     QString _type;
+
+    Database _database;
 
 };
 

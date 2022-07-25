@@ -1,6 +1,15 @@
 #include "database.h"
 
 Database::Database(){
+
+}
+
+void Database::load() {
+    read();
+}
+
+void Database::save(){
+    persist();
 }
 
 Item Database::getItem(int i){
@@ -12,11 +21,15 @@ QVector<Item> Database::getItems(){
 }
 
 void Database::setItem(QString type, QString name, QString url, QString param1, QString param2, QString param3){
-    _list.push_back(Item(type, name, url, param1, param2, param3));
+    Item item = Item(type, name, url, param1, param2, param3);
+    qDebug() << "cria livro";
+    _list.push_back(item);
 }
 
 void Database::setItem(QString type, QString name, QString url, QString param1, QString param2){
-    _list.push_back(Item(type, name, url, param1, param2));
+    Item item = Item(type, name, url, param1, param2);
+    qDebug() << "cria componente";
+    _list.push_back(item);
 }
 
 void Database::removeItem(int i){
@@ -53,8 +66,4 @@ QVector<QString> Database::getItemsFormatted(){
 
     return list;
 
-}
-
-void Database::save(){
-    persist();
 }
