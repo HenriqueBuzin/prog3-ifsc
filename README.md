@@ -4,8 +4,8 @@
 Nesse desafio a ideia é tentar resolver um problema que tenho, onde tenho diversos livros diferentes, os quais as vezes não lemrbo algum detalhe em específico, como por exemplo, a edição, além de colocar um ideia de possível local que ele esteja, links para os recursos digitais que ele possui, entre outros.
 
 ## Definir os Requesitos Funcionais
-C
-
+Cadastrar livro
+Cadastrar componente
 
 ## Definir os Requesitos Não Funcionais
 Sistema de persistência de dados (nesse caso csv)
