@@ -16,7 +16,7 @@ public:
 
     Item getItem(int i);
 
-    QVector<Item> getItems();
+    QVector<Item*> getItems();
 
     void setItem(QString type, QString name, QString url, QString param1, QString param2, QString param3);
 

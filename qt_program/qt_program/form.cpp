@@ -85,6 +85,8 @@ Form::Form(int row, QWidget *parent)
 
     qDebug() << "Form row: " << row;
 
+
+
     _database.getItem(row);
 
     _topLayout = new QHBoxLayout;

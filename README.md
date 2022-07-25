@@ -16,5 +16,5 @@ Cadastrar livros, revistas, componentes, com suas devidas propriedades e referê
 ### Diagrama de Classes
 ![Diagrama de Classes](/img/diagrama_classes.png "Diagrama de Classes").
 
-### Diagrama de Sequência
-![Diagrama de Sequência](/img/diagrama-sequencia.jpg "Diagrama de Sequência").
+### Diagrama de Casos de Uso
+![Diagrama de Casos de Uso](/img/diagrama_casos_de_uso.png "Diagrama de Casos de Uso").

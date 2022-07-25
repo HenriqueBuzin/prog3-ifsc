@@ -17,7 +17,7 @@ public:
 
 protected:
 
-    QVector<Item> _list;
+    QVector<Item*> _list;
 
     void persist();
 
