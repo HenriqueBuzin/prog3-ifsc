@@ -1,17 +1,14 @@
 # Desafio de Programação Orientada a Objetos do IFSC
 
 ## Definir o Problema
-Nesse desafio a ideia é tentar resolver um problema que tenho, onde tenho diversos livros, os quais as vezes não lemrbo algum detalhe em específico, como por exemplo, a edição, além de colocar um ideia de possível local que ele esteja, links para os recursos digitais que ele possui, entre outros.
+Nesse desafio a ideia é tentar resolver um problema que tenho, onde tenho diversos livros diferentes, os quais as vezes não lemrbo algum detalhe em específico, como por exemplo, a edição, além de colocar um ideia de possível local que ele esteja, links para os recursos digitais que ele possui, entre outros.
 
 ## Definir os Requesitos Funcionais
-Formulário
+C
 
 
 ## Definir os Requesitos Não Funcionais
-Sistema de Login
-Talvez webassembly
-Banco de dados (talvez firabase)
-Qt
+Sistema de persistência de dados (nesse caso csv)
 
 ## Casos de Uso
 Cadastrar livros, revistas, componentes, com suas devidas propriedades e referências.
