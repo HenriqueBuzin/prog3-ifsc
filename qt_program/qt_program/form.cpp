@@ -5,7 +5,7 @@ void Form::registerItem() {
     if(_type == "Livro"){
         _database.setItem("Livro", _inputName->text(), _inputUrl->text(), _inputParam1->text(), _inputParam2->text(), _inputParam3->text());
     }else{
-        _database.setItem("Livro", _inputName->text(), _inputUrl->text(), _inputParam1->text(), _inputParam2->text());
+        _database.setItem("Componente", _inputName->text(), _inputUrl->text(), _inputParam1->text(), _inputParam2->text());
     }
 
     qDebug() << _type;
@@ -82,9 +82,10 @@ Form::Form(int row, QWidget *parent)
     : QWidget{parent}
 {
 
-    _database.getItem(row);
 
-    qDebug() << "Form row";
+    qDebug() << "Form row: " << row;
+
+    _database.getItem(row);
 
     _topLayout = new QHBoxLayout;
     _rightLayout = new QVBoxLayout;
@@ -100,7 +101,6 @@ Form::Form(int row, QWidget *parent)
     _inputUrl = new QLineEdit("");
     _leftLayout->addWidget(_inputUrl);
 
-    if(_type == "Livro"){
         _label = new QLabel("Autor");
         _leftLayout->addWidget(_label);
         _inputParam1 = new QLineEdit("");
@@ -115,7 +115,7 @@ Form::Form(int row, QWidget *parent)
         _leftLayout->addWidget(_label);
         _inputParam3 = new QLineEdit("");
         _leftLayout->addWidget(_inputParam3);
-    }else{
+    //
         _label = new QLabel("Tensão");
         _leftLayout->addWidget(_label);
         _inputParam1 = new QLineEdit("");
@@ -125,7 +125,6 @@ Form::Form(int row, QWidget *parent)
         _leftLayout->addWidget(_label);
         _inputParam2 = new QLineEdit("");
         _leftLayout->addWidget(_inputParam2);
-    }
 
     _leftLayout->addStretch();
 

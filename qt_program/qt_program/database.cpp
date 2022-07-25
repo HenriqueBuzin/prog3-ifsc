@@ -13,7 +13,7 @@ void Database::save(){
 }
 
 Item Database::getItem(int i){
-    return _list[i];
+    return _list.at(i);
 }
 
 QVector<Item> Database::getItems(){
@@ -22,8 +22,9 @@ QVector<Item> Database::getItems(){
 
 void Database::setItem(QString type, QString name, QString url, QString param1, QString param2, QString param3){
     Item item = Item(type, name, url, param1, param2, param3);
-    qDebug() << "cria livro";
+    qDebug() << "Cria Livro " << item.getType();
     _list.push_back(item);
+    qDebug() << "Cria Livro List" << _list.back().getName();
 }
 
 void Database::setItem(QString type, QString name, QString url, QString param1, QString param2){

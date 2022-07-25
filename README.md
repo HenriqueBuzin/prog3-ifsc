@@ -17,7 +17,7 @@ Qt
 Cadastrar livros, revistas, componentes, com suas devidas propriedades e referências.
 
 ### Diagrama de Classes
-![Diagrama de Classes](/img/diagrama-classes.jpg "Diagrama de Classes").
+![Diagrama de Classes](/img/diagrama_classes.png "Diagrama de Classes").
 
 ### Diagrama de Sequência
 ![Diagrama de Sequência](/img/diagrama-sequencia.jpg "Diagrama de Sequência").
