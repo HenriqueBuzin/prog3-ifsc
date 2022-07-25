@@ -6,7 +6,7 @@
 #include <QDebug>
 
 #include "form.h"
-#include "csv.h"
+#include "database.h"
 
 class System: public QWidget
 {
@@ -19,11 +19,13 @@ public slots:
     void book();
     void component();
     void remove();
+    void save();
 
 private:
     QHBoxLayout * _topLayout;
     QVBoxLayout * _rightLayout;
     QPushButton * _button;
+
     QTableWidget * _table;
 
     QStringList _horizontalLabels;

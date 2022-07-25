@@ -1,7 +1,16 @@
 #include "form.h"
 
-void Form::access(){
+void Form::registerItem() {
 
+    Database database;
+
+    if(_type == "Livro"){
+        database.setItem("Livro", _inputName->text(), _inputUrl->text(), _inputParam1->text(), _inputParam2->text(), _inputParam3->text());
+    }else{
+        database.setItem("Livro", _inputName->text(), _inputUrl->text(), _inputParam1->text(), _inputParam2->text());
+    }
+
+    qDebug() << _type;
     qDebug() << _inputName->text();
     qDebug() << _inputUrl->text();
     qDebug() << _inputParam1->text();
@@ -11,7 +20,7 @@ void Form::access(){
 }
 
 Form::Form(QString type, QWidget *parent)
-    : QWidget{parent}
+    : _type(type), QWidget{parent}
 {   
     _topLayout = new QHBoxLayout;
     _rightLayout = new QVBoxLayout;
@@ -27,7 +36,7 @@ Form::Form(QString type, QWidget *parent)
     _inputUrl = new QLineEdit("");
     _leftLayout->addWidget(_inputUrl);
 
-    if(type == "Livro"){
+    if(_type == "Livro"){
         _label = new QLabel("Autor");
         _leftLayout->addWidget(_label);
         _inputParam1 = new QLineEdit("");
@@ -59,7 +68,10 @@ Form::Form(QString type, QWidget *parent)
     _topLayout->addLayout(_leftLayout);
 
     _button = new QPushButton("Cadastrar");
-    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(access()));
+
+
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(registerItem()));
+
     _rightLayout->addWidget(_button);
     _rightLayout->addStretch();
 

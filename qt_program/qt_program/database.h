@@ -5,24 +5,30 @@
 #include <QtWidgets>
 
 #include "item.h"
+#include "csv.h"
 
-class Database
+class Database: protected Csv
 {
+
 public:
 
-    Database(){};
+    Database();
 
-    virtual Item getItem(int i) =0;
+    Item getItem(int i);
 
-    virtual QVector<Item> getItems() =0;
+    QVector<Item> getItems();
 
-    virtual QVector<QString> getItemsFormatted() =0;
+    void setItem(QString type, QString name, QString url, QString param1, QString param2, QString param3);
 
-    virtual void setItem(QString type, QString name, QString url, QString param1, QString param2, QString param3) =0;
+    void setItem(QString type, QString name, QString url, QString param1, QString param2);
 
-    virtual void setItem(QString type, QString name, QString url, QString param1, QString param2) =0;
+    void removeItem(int i);
 
-    virtual void removeItem(int i) =0;
+    int getSize();
+
+    QVector<QString> getItemsFormatted();
+
+    void save();
 
 };
 

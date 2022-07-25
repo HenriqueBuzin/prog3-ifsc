@@ -15,7 +15,6 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-    database.h
     form.cpp
     form.h
     item.cpp
@@ -26,8 +25,11 @@ set(PROJECT_SOURCES
     warehouse.cpp
     warehouse.h
     items.csv
+    database.h
+    database.cpp
     csv.h
     csv.cpp
+    main.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

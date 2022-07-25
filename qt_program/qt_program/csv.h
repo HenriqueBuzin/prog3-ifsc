@@ -5,10 +5,9 @@
 #include <QFile>
 #include <QDebug>
 
-#include "database.h"
 #include "item.h"
 
-class Csv: public Database
+class Csv
 {
 public:
 
@@ -16,25 +15,15 @@ public:
 
     ~Csv();
 
-    Item getItem(int i);
+protected:
 
-    QVector<Item> getItems();
+    QVector<Item> _list;
 
-    QVector<QString> getItemsFormatted();
-
-    void setItem(QString type, QString name, QString url, QString param1, QString param2, QString param3);
-
-    void setItem(QString type, QString name, QString url, QString param1, QString param2);
-
-    int getSize();
-
-    void removeItem(int i);
+    void persist();
 
 private:
 
     QFile _file;
-    QVector<Item> _list;
-
 
 };
 

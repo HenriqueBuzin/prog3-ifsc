@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QtWidgets>
 
+#include "database.h"
+
 class Form: public QWidget
 {
     Q_OBJECT
@@ -11,7 +13,7 @@ public:
     explicit Form(QString type, QWidget *parent = nullptr);
 
 public slots:
-    void access();
+    void registerItem();
 
 private:
     QHBoxLayout * _topLayout;
@@ -25,6 +27,8 @@ private:
     QLineEdit * _inputParam1;
     QLineEdit * _inputParam2;
     QLineEdit * _inputParam3;
+
+    QString _type;
 
 };
 

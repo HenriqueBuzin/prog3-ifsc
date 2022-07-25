@@ -15,12 +15,17 @@ void System::component()
 
 void System::remove()
 {
-
     _table->removeRow(_table->currentRow());
 
-    Csv csv;
-    csv.removeItem(_table->currentRow());
+    Database database;
+    database.removeItem(_table->currentRow());
+}
 
+void System::save(){
+
+    Database database;
+
+    database.save();
 }
 
 System::System(QWidget *parent)
@@ -32,20 +37,21 @@ System::System(QWidget *parent)
 
     _table = new QTableWidget();
 
-    Csv csv;
+    Database database;
 
-    _table->setRowCount(csv.getSize());
+    _table->setRowCount(database.getSize());
 
     _table->setColumnCount(1);
 
     _horizontalLabels.append("");
+
     _table->setHorizontalHeaderLabels(_horizontalLabels);
 
     int i = 0;
 
     QStringList _verticalLabels;
 
-    foreach(QString x, csv.getItemsFormatted()){
+    foreach(QString x, database.getItemsFormatted()){
 
         _table->setItem(i, 0, new QTableWidgetItem(x));
 
@@ -75,7 +81,10 @@ System::System(QWidget *parent)
 
     _button = new QPushButton("Excluir");
     QObject::connect(_button, SIGNAL(clicked()), this, SLOT(remove()));
+    _rightLayout->addWidget(_button);
 
+    _button = new QPushButton("Gravar");
+    QObject::connect(_button, SIGNAL(clicked()), this, SLOT(save()));
     _rightLayout->addWidget(_button);
 
     _rightLayout->addStretch();
