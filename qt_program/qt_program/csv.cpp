@@ -1,7 +1,7 @@
 #include "csv.h"
 
 Csv::Csv(QString filename): _file(filename){
-    if(!_file.open(QIODeviceBase::ReadWrite | QIODevice::Text)){
+    if(!_file.open(QIODeviceBase::ReadWrite)){
         qDebug() << _file.errorString();
     }
 
